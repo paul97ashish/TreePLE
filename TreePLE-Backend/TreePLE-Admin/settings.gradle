@@ -1,0 +1,3 @@
+rootProject.name = 'TreePLE-Admin'
+include ':TreePLE'
+project(':TreePLE').projectDir = file('../TreePLE')

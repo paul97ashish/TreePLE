@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">TreePLE-Android</string>
+    <string name="cancel">Cancel</string>
+    <string name="action_signup">Sign Up</string>
+    <string name="username_hint">Username</string>
+    <string name="radio_resident">Resident</string>
+    <string name="radio_municipal">Municipal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="plant_tree_button">Plant Tree</string>
+    <string name="cut_down_tree_button">Cut Down Tree</string>
+    <string name="height_hint">Height (m)</string>
+    <string name="canopy_hint">Canopy Diameter (m)</string>
+    <string name="municipality_prompt">Municipality</string>
+    <string name="landtype_prompt">Land Type</string>
+    <string name="species_hint">Tree Species</string>
+    <string name="action_login">Log In</string>
+    <string name="refresh_button">Refresh</string>
+    <string name="trees_within_distance">Trees within 20 m</string>
+    <string name="action_logout">Log Out</string>
+    <string name="wait_for_location">Waiting for location…</string>
+    <string name="add_edit_address">Add/Edit Address</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="street_name">Street Name</string>
+    <string name="street_number">Street Number</string>
+    <string name="address">Address</string>
+    <string name="update_tree">Update Tree</string>
+    <string name="log_in_request">Please sign up or log in</string>
+    <string name="password_hint">Password</string>
+    <string name="password_confirm_hint">Confirm Password</string>
+    <string name="icon_content_description">TreePLE Icon</string>
+
+    <string-array name="status_array">
+        <item>Planted</item>
+        <item>Cut Down</item>
+    </string-array>
+    <string-array name="health_array">
+        <item>Healthy</item>
+        <item>Diseased</item>
+        <item>Dead</item>
+    </string-array>
+    <string-array name="marking_array">
+        <item>To Cut Down</item>
+        <item>None</item>
+    </string-array>
+</resources>

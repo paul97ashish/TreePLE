@@ -1,0 +1,113 @@
+namespace ca.mcgill.ecse321.project6.model;
+
+enum LandType {
+  Residential,
+  Institutional,
+  Park,
+  Municipal
+}
+
+// Boroughs and separate municipalities on island
+
+enum Municipality {
+  AhuntsicCartierville,
+  Anjou,
+  CoteDesNeigesNotreDamedeGrace,
+  LIleBizardSainteGenevieve,
+  LaSalle,
+  Lachine,
+  LePlateauMontRoyal,
+  SudOuest,
+  MercierHochelagaMaisonneuve,
+  MontrealNord,
+  Outremont,
+  PierrefondsRoxboro,
+  RivieredesPrairiesPointeauxTrembles,
+  RosemontLaPetitePatrie,
+  SaintLaurent,
+  SaintLeonard,
+  Verdun,
+  VilleMarie,
+  VilleraySaintMichelParcExtension,
+
+  BaiedUrfe,
+  Beaconsfield,
+  CoteSaintLuc,
+  DollardDesOrmeaux,
+  Dorval,
+  Hampstead,
+  Kirkland,
+  MontrealEst,
+  MontrealOuest,
+  MontRoyal,
+  PointeClaire,
+  SainteAnnedeBellevue,
+  Senneville,
+  Westmount
+}
+
+class TreeHistory {
+  autounique id;
+  Date recordedOn;
+  Double heightMeters;
+  Double canopyDiameterMeters;
+  
+  1 -> 1 User reporter;
+}
+
+class Tree {
+  autounique id;
+  Double latitude;
+  Double longitude;
+  Double heightMeters;
+  Double canopyDiameterMeters;
+  species;
+  Municipality municipality;
+  LandType land;
+  
+  1 -> 1 TreeState state;
+  1 -> * TreeHistory entries sorted {id};
+}
+
+class User {
+  autounique id;
+  name;
+  passwordHash;
+  enum UserType { Resident, Municipal }
+  UserType type;
+  0..1 -> 0..1 Address address;
+}
+
+class Address {
+  Integer streetNumber;
+  streetName;
+  postalCode;
+  Double latitude;
+  Double longitude;
+  
+  boolean equals(Object obj) {
+    if(obj.getClass() == this.getClass()) {
+      Address a = (Address) obj;
+      return (a.getStreetNumber() == streetNumber &&
+        a.getStreetName().equals(streetName) &&
+        a.getPostalCode().equals(postalCode) &&
+        a.getLatitude() == latitude &&
+        a.getLongitude() == longitude);
+    }
+    return false;
+  }
+}
+
+class TreeState {
+  enum Status { Projected, Planted, CutDown }
+  enum Health { Healthy, Diseased, Dead }
+  enum Mark { MarkedToPlant, MarkedToCutDown, None }
+  defaulted Status status = Status.Planted;
+  defaulted Health health = Health.Healthy;
+  defaulted Mark mark = Mark.None;
+}
+
+class TreePLE {
+  1 -> * Tree trees;
+  1 -> * User users;
+}
