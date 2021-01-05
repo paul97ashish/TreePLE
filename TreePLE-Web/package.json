@@ -16,7 +16,7 @@
   "dependencies": {
     "@types/power-assert": "^1.5.0",
     "@types/selenium-webdriver": "^3.0.8",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-vue": "latest",
     "http-server": "^0.11.1",
